@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    
+    <div>
+        <canvas id="myChart"></canvas>
+      </div>
+
+      <script>
+
+
+        const DATA_COUNT = 7;
+        const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
+        
+        const labels = [0, 0, 0, 0, 0, 0, 0];
+        const data = {
+          labels: labels,
+          datasets: [
+            {
+              label: 'Dataset 1',
+              data: [25, 15, 5, 15, 20, 30, 25],
+              backgroundColor: '#00B26B',
+              borderColor: '#00B26B',
+              pointStyle: 'line',
+              tension: 0.4,
+            },
+          ]
+        };
+
+        const config = {
+            type: 'line',
+            data,
+            options: {
+                plugins: {
+                    legend:false
+                },
+                responsive: true,
+                scales: {
+                    x: {
+                      display: false,
+                    },
+                    y: {
+                      display: false,
+
+                    }
+                }
+
+            }
+          };
+
+
+      
+        var myChart = new Chart(
+          document.getElementById('myChart'),
+          config
+        );
+      </script>
+
+</body>
+</html>
+
+
